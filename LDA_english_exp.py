@@ -12,14 +12,14 @@ from gensim.models.ldamodel import LdaModel
 
 # 1. PENGATURAN FOLDER & PERINGATAN
 warnings.filterwarnings('ignore')
-# Sesuaikan path folder untuk menyimpan hasil eksperimen Kaggle Anda
+# Sesuaikan path folder untuk menyimpan hasil eksperimen
 folder_path = 'D:/UNPAM S2/Semester 3/ADVANCED NLP/LDA_english/'
 
 if not os.path.exists(folder_path):
     os.makedirs(folder_path)
 
 # 2. PEMUATAN DATASET KAGGLE
-# Pastikan file 'I3_Industrial_Safety_And_Health_Data.csv' berada di direktori kerja Anda
+# Pastikan file 'I3_Industrial_Safety_And_Health_Data.csv' berada di direktori
 try:
     # Mengambil dataset IHM Stefanini dari Kaggle
     raw_df = pd.read_csv('IHMStefanini_industrial_safety_and_health_database_with_accidents_description.csv')
@@ -33,7 +33,7 @@ except FileNotFoundError:
 
 # 3. PREPROCESSING (DIUBAH KE ENGLISH)
 try:
-    # Menggunakan English Stopwords sesuai instruksi
+    # Menggunakan English Stopwords
     stop_words = set(stopwords.words('english'))
     # Menambahkan custom stopwords medis/industri jika diperlukan
     stop_words.update(['also', 'using', 'found', 'reported', 'due', 'resulted'])
